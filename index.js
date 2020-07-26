@@ -9,9 +9,15 @@ if (votingAge >= 18) {
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
+let coinFlip = Math.round(Math.random());
 
+if (coinFlip === 1) {
+    console.log("Heads");
+}
 
-
+if (coinFlip === 0) {
+    console.log("Tails");
+}
 
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
@@ -25,7 +31,7 @@ console.log(typeof(1999));
 
 //Task d: Write a function to multiply a*b 
 
-function multiply () {
+function multiply() {
     let result = a*b;
     return (a*b);
 }
@@ -73,9 +79,20 @@ console.log(myAge*7);
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
+  let computerChoice = () => {
+    let randomNumber = (Math.floor(Math.random() * 3))
+    if (randomNumber === 0) {
+        return 'Rock';
+    }
+    else if (randomNumber === 1) {
+        return 'Paper';
+    }
+    else if (randomNumber === 2) {
+        return 'Scissor';
+    }
+        }
+console.log(computerChoice());
   
-  
-
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
