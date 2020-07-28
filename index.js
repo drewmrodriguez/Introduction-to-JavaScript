@@ -22,7 +22,7 @@ if (coinFlip === 0) {
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
-const year = '1999';
+let year = '1999';
 
 Number(1999);
 
@@ -55,6 +55,7 @@ console.log(myAge*7);
 //takes weight in pounds and age in years (note if the dog is a puppy the age will be a decimal) and returns the number of pounds of raw food to feed in a day.
 
 //feeding requirements
+// adult dogs
 // adult dogs at least 1 year 
 // up to 5 lbs - 5% of their body weight
 // 6 - 10 lbs - 4% of their body weight 
@@ -62,13 +63,30 @@ console.log(myAge*7);
 // > 15lbs - 2% of their body weight 
 
 // Puppies less than 1 year
+// puppies
 // 2 - 4 months 10% of their body weight
 // 4 - 7 months 5% of their body weight 
 // 7 - 12 months 4% of their body weight
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
+function dogFeeder (weight, age) {
+    let rawFood = 0;
+    if (age >= 1) { //adult dog
+        if (weight <= 5) {
+            rawFood = weight *.05
+            return rawFood;
+        } else if (weight > 5 && weight <= 10) {
+            rawFood = weight * .04;
+            return rawFood;
+        }
+        
+    } else {  //puppy
+        console.log("puppy")
+    }
+}
 
+console.log(dogFeeder(1,2));
 
 
 
@@ -97,13 +115,21 @@ console.log(computerChoice());
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
+function toMiles(Number) {
+    return (Number/8) * 5;
+}
 
+console.log(toMiles(5))
 
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
   
+function toCM(Number) {
+    return (Number) * 30.48;
+}
 
+console.log(toCM(3))
 
 
 
@@ -112,6 +138,14 @@ console.log(computerChoice());
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
+function annoyingSong(countDown) {
+    for (let i = countDown; i > 0; i--) {
+    let nextNum = i - 1;
+    console.log(i + " bottles of soda on the wall, " + i + " bottles of soda, take one down pass it around " + nextNum + " bottles of soda on the wall"); 
+    }
+}
+
+console.log(annoyingSong(98))
 
 
 
@@ -125,6 +159,22 @@ console.log(computerChoice());
 //60s should be D 
 //and anything below 60 should be F
   
+
+function gradeCalculator(testScore) {
+    if (testScore >= 90) {
+        console.log("Your test score is an A!");
+    } else if (testScore <= 89 && testScore >= 80) {
+        console.log("Your test score is a B!"); 
+    } else if(testScore <= 79 && testScore >= 70) {
+        console.log("Your test score is a C, needs work.");
+    } else if(testScore <= 69 && testScore >= 60) {
+        console.log("Your test score is a D, you need to study more.");
+    } else {
+        console.log("Your test score is a F, you failed.");
+    }
+}
+
+console.log(gradeCalculator(77))
 
   
   
